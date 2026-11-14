@@ -1,0 +1,945 @@
+{
+  "dry_runs": [
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "accounts list",
+      "path": "/plans/[^/]+/accounts$",
+      "run": [
+        "accounts",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "accounts create",
+      "path": "/plans/[^/]+/accounts$",
+      "run": [
+        "accounts",
+        "create",
+        "--name",
+        "sample",
+        "--type",
+        "checking",
+        "--balance",
+        "1"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "accounts get",
+      "path": "/plans/[^/]+/accounts/[^/]+$",
+      "run": [
+        "accounts",
+        "get",
+        "00000000-0000-4000-8000-000000000000"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "categories list",
+      "path": "/plans/[^/]+/categories$",
+      "run": [
+        "categories",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "categories create",
+      "path": "/plans/[^/]+/categories$",
+      "run": [
+        "categories",
+        "create",
+        "--name",
+        "sample",
+        "--category-group-id",
+        "00000000-0000-4000-8000-000000000000"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "categories get",
+      "path": "/plans/[^/]+/categories/[^/]+$",
+      "run": [
+        "categories",
+        "get",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PATCH",
+      "name": "categories update",
+      "path": "/plans/[^/]+/categories/[^/]+$",
+      "run": [
+        "categories",
+        "update",
+        "sample",
+        "--name",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "categories get-month",
+      "path": "/plans/[^/]+/months/[^/]+/categories/[^/]+$",
+      "run": [
+        "categories",
+        "get-month",
+        "2024-01-01",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PATCH",
+      "name": "categories update-month",
+      "path": "/plans/[^/]+/months/[^/]+/categories/[^/]+$",
+      "run": [
+        "categories",
+        "update-month",
+        "2024-01-01",
+        "sample",
+        "--budgeted",
+        "1"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "categories create-group",
+      "path": "/plans/[^/]+/category_groups$",
+      "run": [
+        "categories",
+        "create-group",
+        "--name",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PATCH",
+      "name": "categories update-group",
+      "path": "/plans/[^/]+/category_groups/[^/]+$",
+      "run": [
+        "categories",
+        "update-group",
+        "sample",
+        "--name",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "money-movements list",
+      "path": "/plans/[^/]+/money_movements$",
+      "run": [
+        "money-movements",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "money-movements list-by-month",
+      "path": "/plans/[^/]+/months/[^/]+/money_movements$",
+      "run": [
+        "money-movements",
+        "list-by-month",
+        "2024-01-01"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "money-movements list-groups",
+      "path": "/plans/[^/]+/money_movement_groups$",
+      "run": [
+        "money-movements",
+        "list-groups"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "money-movements list-groups-by-month",
+      "path": "/plans/[^/]+/months/[^/]+/money_movement_groups$",
+      "run": [
+        "money-movements",
+        "list-groups-by-month",
+        "2024-01-01"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "months list",
+      "path": "/plans/[^/]+/months$",
+      "run": [
+        "months",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "months get",
+      "path": "/plans/[^/]+/months/[^/]+$",
+      "run": [
+        "months",
+        "get",
+        "2024-01-01"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "payee-locations list",
+      "path": "/plans/[^/]+/payee_locations$",
+      "run": [
+        "payee-locations",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "payee-locations get",
+      "path": "/plans/[^/]+/payee_locations/[^/]+$",
+      "run": [
+        "payee-locations",
+        "get",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "payee-locations list-by-payee",
+      "path": "/plans/[^/]+/payees/[^/]+/payee_locations$",
+      "run": [
+        "payee-locations",
+        "list-by-payee",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "payees list",
+      "path": "/plans/[^/]+/payees$",
+      "run": [
+        "payees",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "payees create",
+      "path": "/plans/[^/]+/payees$",
+      "run": [
+        "payees",
+        "create",
+        "--name",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "payees get",
+      "path": "/plans/[^/]+/payees/[^/]+$",
+      "run": [
+        "payees",
+        "get",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PATCH",
+      "name": "payees update",
+      "path": "/plans/[^/]+/payees/[^/]+$",
+      "run": [
+        "payees",
+        "update",
+        "sample",
+        "--name",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "plans list",
+      "path": "/plans$",
+      "run": [
+        "plans",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "plans get",
+      "path": "/plans/[^/]+$",
+      "run": [
+        "plans",
+        "get"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "plans get-settings",
+      "path": "/plans/[^/]+/settings$",
+      "run": [
+        "plans",
+        "get-settings"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "scheduled-transactions list",
+      "path": "/plans/[^/]+/scheduled_transactions$",
+      "run": [
+        "scheduled-transactions",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "scheduled-transactions create",
+      "path": "/plans/[^/]+/scheduled_transactions$",
+      "run": [
+        "scheduled-transactions",
+        "create",
+        "--account-id",
+        "00000000-0000-4000-8000-000000000000",
+        "--date",
+        "2024-01-01"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "scheduled-transactions get",
+      "path": "/plans/[^/]+/scheduled_transactions/[^/]+$",
+      "run": [
+        "scheduled-transactions",
+        "get",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PUT",
+      "name": "scheduled-transactions update",
+      "path": "/plans/[^/]+/scheduled_transactions/[^/]+$",
+      "run": [
+        "scheduled-transactions",
+        "update",
+        "sample",
+        "--account-id",
+        "00000000-0000-4000-8000-000000000000",
+        "--date",
+        "2024-01-01"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "DELETE",
+      "name": "scheduled-transactions delete",
+      "path": "/plans/[^/]+/scheduled_transactions/[^/]+$",
+      "run": [
+        "scheduled-transactions",
+        "delete",
+        "sample",
+        "--yes"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "transactions list",
+      "path": "/plans/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "transactions create",
+      "path": "/plans/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "create",
+        "--transaction",
+        "{}"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PATCH",
+      "name": "transactions update-many",
+      "path": "/plans/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "update-many",
+        "--transactions",
+        "[{}]"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "POST",
+      "name": "transactions import",
+      "path": "/plans/[^/]+/transactions/import$",
+      "run": [
+        "transactions",
+        "import"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "transactions get",
+      "path": "/plans/[^/]+/transactions/[^/]+$",
+      "run": [
+        "transactions",
+        "get",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "PUT",
+      "name": "transactions update",
+      "path": "/plans/[^/]+/transactions/[^/]+$",
+      "run": [
+        "transactions",
+        "update",
+        "sample",
+        "--account-id",
+        "00000000-0000-4000-8000-000000000000"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "DELETE",
+      "name": "transactions delete",
+      "path": "/plans/[^/]+/transactions/[^/]+$",
+      "run": [
+        "transactions",
+        "delete",
+        "sample",
+        "--yes"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "transactions list-by-account",
+      "path": "/plans/[^/]+/accounts/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "list-by-account",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "transactions list-by-category",
+      "path": "/plans/[^/]+/categories/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "list-by-category",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "transactions list-by-payee",
+      "path": "/plans/[^/]+/payees/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "list-by-payee",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "transactions list-by-month",
+      "path": "/plans/[^/]+/months/[^/]+/transactions$",
+      "run": [
+        "transactions",
+        "list-by-month",
+        "sample"
+      ]
+    },
+    {
+      "auth": [
+        "bearer"
+      ],
+      "method": "GET",
+      "name": "user get",
+      "path": "/user$",
+      "run": [
+        "user",
+        "get"
+      ]
+    }
+  ],
+  "help": [
+    [
+      "accounts",
+      "list"
+    ],
+    [
+      "accounts",
+      "create"
+    ],
+    [
+      "accounts",
+      "get"
+    ],
+    [
+      "categories",
+      "list"
+    ],
+    [
+      "categories",
+      "create"
+    ],
+    [
+      "categories",
+      "get"
+    ],
+    [
+      "categories",
+      "update"
+    ],
+    [
+      "categories",
+      "get-month"
+    ],
+    [
+      "categories",
+      "update-month"
+    ],
+    [
+      "categories",
+      "create-group"
+    ],
+    [
+      "categories",
+      "update-group"
+    ],
+    [
+      "money-movements",
+      "list"
+    ],
+    [
+      "money-movements",
+      "list-by-month"
+    ],
+    [
+      "money-movements",
+      "list-groups"
+    ],
+    [
+      "money-movements",
+      "list-groups-by-month"
+    ],
+    [
+      "months",
+      "list"
+    ],
+    [
+      "months",
+      "get"
+    ],
+    [
+      "payee-locations",
+      "list"
+    ],
+    [
+      "payee-locations",
+      "get"
+    ],
+    [
+      "payee-locations",
+      "list-by-payee"
+    ],
+    [
+      "payees",
+      "list"
+    ],
+    [
+      "payees",
+      "create"
+    ],
+    [
+      "payees",
+      "get"
+    ],
+    [
+      "payees",
+      "update"
+    ],
+    [
+      "plans",
+      "list"
+    ],
+    [
+      "plans",
+      "get"
+    ],
+    [
+      "plans",
+      "get-settings"
+    ],
+    [
+      "scheduled-transactions",
+      "list"
+    ],
+    [
+      "scheduled-transactions",
+      "create"
+    ],
+    [
+      "scheduled-transactions",
+      "get"
+    ],
+    [
+      "scheduled-transactions",
+      "update"
+    ],
+    [
+      "scheduled-transactions",
+      "delete"
+    ],
+    [
+      "transactions",
+      "list"
+    ],
+    [
+      "transactions",
+      "create"
+    ],
+    [
+      "transactions",
+      "update-many"
+    ],
+    [
+      "transactions",
+      "import"
+    ],
+    [
+      "transactions",
+      "get"
+    ],
+    [
+      "transactions",
+      "update"
+    ],
+    [
+      "transactions",
+      "delete"
+    ],
+    [
+      "transactions",
+      "list-by-account"
+    ],
+    [
+      "transactions",
+      "list-by-category"
+    ],
+    [
+      "transactions",
+      "list-by-payee"
+    ],
+    [
+      "transactions",
+      "list-by-month"
+    ],
+    [
+      "user",
+      "get"
+    ]
+  ],
+  "package": "codapact_ynab",
+  "prefix": "YNAB",
+  "program": "ynab",
+  "response_validation": "strict",
+  "scenarios": [],
+  "schemes": [
+    {
+      "kind": "bearer",
+      "location": null,
+      "name": "bearer",
+      "wire": null
+    }
+  ],
+  "smoke": [
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "accounts list",
+      "run": [
+        "accounts",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "categories list",
+      "run": [
+        "categories",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "money-movements list",
+      "run": [
+        "money-movements",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "money-movements list-groups",
+      "run": [
+        "money-movements",
+        "list-groups"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "months list",
+      "run": [
+        "months",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "payee-locations list",
+      "run": [
+        "payee-locations",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "payees list",
+      "run": [
+        "payees",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "plans list",
+      "run": [
+        "plans",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "plans get",
+      "run": [
+        "plans",
+        "get"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "plans get-settings",
+      "run": [
+        "plans",
+        "get-settings"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "scheduled-transactions list",
+      "run": [
+        "scheduled-transactions",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "transactions list",
+      "run": [
+        "transactions",
+        "list"
+      ]
+    },
+    {
+      "auth": [
+        [
+          "bearer"
+        ]
+      ],
+      "name": "user get",
+      "run": [
+        "user",
+        "get"
+      ]
+    }
+  ],
+  "suite_version": 1
+}

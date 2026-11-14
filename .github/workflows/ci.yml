@@ -1,4 +1,4 @@
-name: Contract and quality
+name: CI
 on:
   pull_request:
   push:
@@ -10,17 +10,12 @@ on:
         description: Exact revision to validate for a release
         type: string
         required: true
-  schedule:
-    - cron: '17 9 * * *'
 permissions:
   contents: read
 jobs:
-  quality:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+  generated:
+    name: Generated code matches the contract
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -30,13 +25,35 @@ jobs:
         with:
           enable-cache: true
       - run: uv sync --locked
-      - run: uv run poe check
-      - run: uv run poe codegen-check
-      - run: uv run poe contract-check
-      - run: uv run poe skill-check
-      - run: uv build
-      - run: uv run poe distribution-check
-  upstream:
+      - name: Regenerate with the pinned Codapact
+        run: uv run codapact generate
+      - name: Fail on drift
+        run: |
+          git add -N .
+          git diff --exit-code --stat || { echo '::error::gen/ is stale. Run: uv run codapact generate'; exit 1; }
+
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.13', '3.14']
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.ref || github.sha }}
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python }}
+      - run: uv sync --locked
+      - run: uv run pytest -q
+
+  package:
+    name: Build and install the distribution
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -44,5 +61,12 @@ jobs:
           persist-credentials: false
           ref: ${{ inputs.ref || github.sha }}
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
-      - run: uv sync --locked
-      - run: uv run poe compat-check
+      - run: uv build
+      - run: uvx --from twine==6.2.0 twine check --strict dist/*.whl dist/*.tar.gz
+      - name: Installed wheel runs
+        run: |
+          uv venv /tmp/wheel
+          VIRTUAL_ENV=/tmp/wheel uv pip install dist/*.whl
+          /tmp/wheel/bin/ynab --version
+          /tmp/wheel/bin/ynab doctor --offline
+          /tmp/wheel/bin/ynab accounts list --dry-run
