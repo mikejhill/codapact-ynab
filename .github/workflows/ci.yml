@@ -66,7 +66,9 @@ jobs:
       - name: Installed wheel runs
         run: |
           uv venv /tmp/wheel
-          VIRTUAL_ENV=/tmp/wheel uv pip install dist/*.whl
+          # Locked runtime dependencies, so a stale index mirror can't change what is tested.
+          uv export --locked --no-dev --no-emit-project --no-hashes -o /tmp/runtime.txt
+          VIRTUAL_ENV=/tmp/wheel uv pip install -r /tmp/runtime.txt dist/*.whl
           /tmp/wheel/bin/ynab --version
           /tmp/wheel/bin/ynab doctor --offline
           /tmp/wheel/bin/ynab accounts list --dry-run
