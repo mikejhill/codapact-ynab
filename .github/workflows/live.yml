@@ -1,16 +1,12 @@
-name: Read-only live YNAB tests
-
-# Environment secrets must be configured by the repository owner separately.
+name: Live YNAB (read-only)
+# Runs the generated suite's read-only live cases against the real API.
 on:
   workflow_dispatch:
-
 permissions:
   contents: read
-
 concurrency:
   group: ynab-live
   cancel-in-progress: false
-
 jobs:
   live:
     if: github.ref == 'refs/heads/main'
@@ -24,12 +20,10 @@ jobs:
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with:
           enable-cache: false
-      - name: Install reviewed locked dependencies without YNAB secrets
-        run: uv sync --locked --no-editable
-      - name: Run read-only probes with step-scoped secrets
+      - name: Install locked dependencies without secrets
+        run: uv sync --locked
+      - name: Read-only live cases
         env:
-          YNAB_ACCESS_TOKEN: ${{ secrets.YNAB_ACCESS_TOKEN }}
-          YNAB_TEST_PLAN_ID: ${{ secrets.YNAB_TEST_PLAN_ID }}
-        run: |
-          ulimit -c 0
-          .venv/bin/python -m ynab_api_cli.ci_live
+          YNAB_E2E_LIVE: '1'
+          YNAB_BEARER: ${{ secrets.YNAB_ACCESS_TOKEN }}
+        run: uv run pytest -q -k live

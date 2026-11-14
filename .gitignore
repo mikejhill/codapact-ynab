@@ -1,18 +1,5 @@
-# Python-generated files
+.venv/
 __pycache__/
-*.py[oc]
-build/
+*.pyc
 dist/
-wheels/
-*.egg-info
-
-# Virtual environments
-.venv
-.coverage
-.hypothesis/
 .pytest_cache/
-.ruff_cache/
-.env
-.env.*
-!.env.example
-auth.json

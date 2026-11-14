@@ -7,13 +7,13 @@
   "pull-request-title-pattern": "chore: release ${version}",
   "packages": {
     ".": {
-      "package-name": "ynab-api-cli",
+      "package-name": "codapact-ynab",
       "changelog-path": "CHANGELOG.md",
       "extra-files": [
         {
           "type": "toml",
           "path": "uv.lock",
-          "jsonpath": "$.package[?(@.name.value=='ynab-api-cli')].version"
+          "jsonpath": "$.package[?(@.name.value=='codapact-ynab')].version"
         }
       ]
     }

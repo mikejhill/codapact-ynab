@@ -1,0 +1,13 @@
+version: 1
+source:
+  type: openapi
+  path: openapi.yaml
+  upstream: https://api.ynab.com/papi/open_api_spec.yaml   # codapact sync / sync --check
+shape:
+  - group: {by: tag}
+  - defaults:
+      params: {"*.plan_id": last-used}
+cli: {program: ynab}
+targets:
+  - {name: python, output: gen/python, options: {package: codapact_ynab, distribution: codapact-ynab}}
+  - {name: python-cli, output: gen/python}
