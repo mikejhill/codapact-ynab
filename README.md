@@ -1,3 +1,9 @@
+> [!WARNING]
+> **Deprecated.** `ynab-api-cli` receives no further updates. Use
+> [`codapact-ynab`](https://pypi.org/project/codapact-ynab/) instead:
+> `uv tool install codapact-ynab`, then run `ynab --help`.
+> Source: https://github.com/mikejhill/codapact-ynab
+
 # YNAB API CLI
 
 Complete, synchronous REST CLI for the reviewed YNAB API contract. The official SDK is not a dependency. Generated, strictly typed endpoint classes and models are included for Python callers.

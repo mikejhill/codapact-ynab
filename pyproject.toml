@@ -1,7 +1,8 @@
 [project]
 name = "ynab-api-cli"
-version = "0.1.0"
-description = "Complete contract-driven REST CLI for YNAB"
+version = "0.1.1"
+description = "DEPRECATED: use codapact-ynab. Contract-driven REST CLI for YNAB"
+classifiers = ["Development Status :: 7 - Inactive"]
 readme = "README.md"
 authors = [
     { name = "Mike Hill" }
@@ -18,9 +19,9 @@ dependencies = [
 ynab-api-cli = "ynab_api_cli.__main__:Application.main"
 
 [project.urls]
-Homepage = "https://github.com/mikejhill/ynab-api-cli"
-Repository = "https://github.com/mikejhill/ynab-api-cli"
-Issues = "https://github.com/mikejhill/ynab-api-cli/issues"
+Homepage = "https://github.com/mikejhill/codapact-ynab"
+Repository = "https://github.com/mikejhill/codapact-ynab"
+Issues = "https://github.com/mikejhill/codapact-ynab/issues"
 
 [build-system]
 requires = ["uv_build>=0.11.32,<0.12.0"]

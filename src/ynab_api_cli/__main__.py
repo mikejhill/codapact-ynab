@@ -25,6 +25,12 @@ from ynab_api_cli.types import JsonCodec, JsonValue, RequestValues
 
 logger = logging.getLogger(__name__)
 
+DEPRECATION_NOTICE = (
+    "ynab-api-cli is deprecated and receives no further updates. "
+    "Switch to codapact-ynab: `uv tool install codapact-ynab`, then run `ynab`. "
+    "https://pypi.org/project/codapact-ynab/"
+)
+
 
 class Application:
     """Coordinate connection setup and reviewed typed operation dispatch."""
@@ -41,6 +47,7 @@ class Application:
         """Run the console entry point and return its documented exit status."""
         if isinstance(sys.stdout, io.TextIOWrapper):
             sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.write(f"warning: {DEPRECATION_NOTICE}\n")
         sys.exit(cls().run(argv))
 
     def run(self, argv: Sequence[str] | None = None) -> int:
