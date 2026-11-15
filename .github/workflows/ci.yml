@@ -70,5 +70,7 @@ jobs:
           uv export --locked --no-dev --no-emit-project --no-hashes -o /tmp/runtime.txt
           VIRTUAL_ENV=/tmp/wheel uv pip install -r /tmp/runtime.txt dist/*.whl
           /tmp/wheel/bin/codapact-ynab --version
-          /tmp/wheel/bin/codapact-ynab doctor --offline
+          # No credentials in CI: doctor must run and report them missing (exit 3).
+          rc=0; /tmp/wheel/bin/codapact-ynab doctor --offline >/dev/null || rc=$?
+          [ "$rc" -eq 3 ]
           /tmp/wheel/bin/codapact-ynab accounts list --dry-run
