@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://github.com/mikejhill/codapact-ynab/compare/v0.2.0...v0.3.0) (2026-11-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* the `ynab` command is now `codapact-ynab`.
+
+### Features
+
+* rename the command to codapact-ynab ([#7](https://github.com/mikejhill/codapact-ynab/issues/7)) ([b9cfb58](https://github.com/mikejhill/codapact-ynab/commit/b9cfb5830f5fe72c30239936fd2424fe11378338))
+
 ## [0.2.0](https://github.com/mikejhill/codapact-ynab/compare/v0.1.0...v0.2.0) (2026-11-14)
 
 
