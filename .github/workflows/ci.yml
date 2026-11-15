@@ -69,6 +69,6 @@ jobs:
           # Locked runtime dependencies, so a stale index mirror can't change what is tested.
           uv export --locked --no-dev --no-emit-project --no-hashes -o /tmp/runtime.txt
           VIRTUAL_ENV=/tmp/wheel uv pip install -r /tmp/runtime.txt dist/*.whl
-          /tmp/wheel/bin/ynab --version
-          /tmp/wheel/bin/ynab doctor --offline
-          /tmp/wheel/bin/ynab accounts list --dry-run
+          /tmp/wheel/bin/codapact-ynab --version
+          /tmp/wheel/bin/codapact-ynab doctor --offline
+          /tmp/wheel/bin/codapact-ynab accounts list --dry-run

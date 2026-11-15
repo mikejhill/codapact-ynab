@@ -7,7 +7,15 @@ shape:
   - group: {by: tag}
   - defaults:
       params: {"*.plan_id": last-used}
-cli: {program: ynab}
+cli:
+  # program defaults to the distribution: codapact-ynab
+  previous_programs: [ynab]   # saved logins and settings from 0.2.0 carry over
+  env_prefix: YNAB            # keep YNAB_BEARER, YNAB_BASE_URL, ...
+  auth:
+    bearer:
+      docs: >-
+        Create a personal access token in YNAB under Account Settings > Developer Settings
+        (https://app.ynab.com/settings/developer). It grants full access to your budgets.
 targets:
   - {name: python, output: gen/python, options: {package: codapact_ynab, distribution: codapact-ynab}}
   - {name: python-cli, output: gen/python}
