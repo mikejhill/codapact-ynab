@@ -772,7 +772,7 @@
   ],
   "package": "codapact_ynab",
   "prefix": "YNAB",
-  "program": "ynab",
+  "program": "codapact-ynab",
   "response_validation": "strict",
   "scenarios": [],
   "schemes": [

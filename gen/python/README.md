@@ -13,19 +13,19 @@ client = Client()
 From this directory (uv installs the package and its runtime on first use):
 
 ```console
-uv run ynab --help
+uv run codapact-ynab --help
 ```
 
 Anywhere, without a project:
 
 ```console
-uvx --from PATH/TO/THIS/DIR ynab --help
-uv tool install PATH/TO/THIS/DIR   # then just: ynab --help
+uvx --from PATH/TO/THIS/DIR codapact-ynab --help
+uv tool install PATH/TO/THIS/DIR   # then just: codapact-ynab --help
 ```
 
 ## Credentials
 
-Save once (OS keyring): `uv run ynab auth login`, then check with `uv run ynab auth status` or `uv run ynab doctor`.
+Save once (OS keyring): `uv run codapact-ynab auth login`, then check with `uv run codapact-ynab auth status` or `uv run codapact-ynab doctor`.
 
 Or set per shell:
 
