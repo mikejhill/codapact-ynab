@@ -1,0 +1,15 @@
+{
+  "config_sha256": "da58fd67f6bdf642bd0a0895afc94148b9b99c153c9e6bcc6689a8d5c0d403d3",
+  "files": {
+    "README.md": "82fdeb229acf521fe5d4861f39be9dd79b148640a4a00b18ec0664f759e364b3"
+  },
+  "generated_at": "2026-11-20T01:16:21Z",
+  "generator": "codapact/0.11.0",
+  "source": {
+    "location": "openapi.yaml",
+    "sha256": "eb761879d54eb47b592bd5f4d52b6d00c64b6578996e53e1ec115765183d9e92",
+    "type": "openapi",
+    "upstream": "https://api.ynab.com/papi/open_api_spec.yaml"
+  },
+  "version": 1
+}

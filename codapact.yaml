@@ -16,6 +16,24 @@ cli:
       docs: >-
         Create a personal access token in YNAB under Account Settings > Developer Settings
         (https://app.ynab.com/settings/developer). It grants full access to your budgets.
+readme:
+  name: YNAB API
+  docs: https://api.ynab.com/
+  repository: mikejhill/codapact-ynab
+  examples:
+    - plans list
+    - accounts list -o table
+    - "transactions list --since-date 2026-01-01 --query 'data.transactions[].payee_name'"
+  sections:
+    - title: Notes
+      body: |
+        `--plan-id` defaults to `last-used`. `--dry-run` prints the HTTP request without
+        sending it; commands that delete ask for confirmation (or `--yes`).
+
+        Upgrading from 0.2.0, where the command was `ynab`: a login saved with
+        `ynab auth login` and settings in `~/.config/ynab/` are picked up automatically.
+        `codapact-ynab` replaces `ynab-api-cli`, which is no longer maintained.
 targets:
   - {name: python, output: gen/python, options: {package: codapact_ynab, distribution: codapact-ynab}}
   - {name: python-cli, output: gen/python}
+  - {name: python-readme, output: .}
