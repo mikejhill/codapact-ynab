@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/mikejhill/codapact-ynab/compare/v0.3.0...v0.4.0) (2026-11-20)
+
+
+### Features
+
+* generate the README with Codapact 0.11.0 ([#9](https://github.com/mikejhill/codapact-ynab/issues/9)) ([bff4a42](https://github.com/mikejhill/codapact-ynab/commit/bff4a428ebeaa161d25f17e8d7def2fc58c97b7c))
+
 ## [0.3.0](https://github.com/mikejhill/codapact-ynab/compare/v0.2.0...v0.3.0) (2026-11-15)
 
 
