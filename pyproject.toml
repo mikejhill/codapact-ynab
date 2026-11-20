@@ -9,7 +9,7 @@ license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Mike Hill" }]
 requires-python = ">=3.13"
-dependencies = ["codapact[keyring]>=0.9.0,<0.10"]
+dependencies = ["codapact[keyring]>=0.11.0,<0.12"]
 keywords = ["ynab", "budget", "cli", "api-client", "codapact"]
 classifiers = [
     "Environment :: Console",
@@ -30,7 +30,7 @@ Issues = "https://github.com/mikejhill/codapact-ynab/issues"
 Generator = "https://github.com/mikejhill/codapact"
 
 [dependency-groups]
-dev = ["codapact[keyring]==0.9.0", "pytest>=8"]
+dev = ["codapact[keyring]==0.11.0", "pytest>=8"]
 
 [tool.uv.build-backend]
 module-name = "codapact_ynab"

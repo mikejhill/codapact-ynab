@@ -52,15 +52,16 @@ wheels = [
 
 [[package]]
 name = "codapact"
-version = "0.9.0"
+version = "0.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "graphql-core" },
     { name = "pyyaml" },
+    { name = "truststore" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d5/77/2423d8a3226dd9596ce153293dfa92357d7a254e3ab23f62638712969e0b/codapact-0.9.0.tar.gz", hash = "sha256:4dfdb3aa84400ec54ad46d98bbdff4e6dafcf05d19231b348932440c810b3d96", size = 461194, upload-time = "2026-11-15T02:14:29.545Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a6/44/4ec52dcae1cdc4f42fb6fe6aca9f63a484d5fbbbba74e00322aa9670309d/codapact-0.11.0.tar.gz", hash = "sha256:0c4a51be3ea5ac18bd50781647dd3c32852d79f44dd915136ac9f0b65642504e", size = 543781, upload-time = "2026-11-20T01:22:35.999Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d1/ed/8e3f2c303d7dc875ea43e2c6e29c956a1b58d4045cd3c28741e5f94dd89d/codapact-0.9.0-py3-none-any.whl", hash = "sha256:44837f620eac98f66728a2549cb84a68c740104f90ea13b0af7cc9dc84a89ac3", size = 186275, upload-time = "2026-11-15T02:14:27.92Z" },
+    { url = "https://files.pythonhosted.org/packages/5c/94/06aaf0f064ee3c86d8a71e11e4a577ffbd5b3ed73bdded359fb13335601f/codapact-0.11.0-py3-none-any.whl", hash = "sha256:4939dd625578f536a82a74b6f732c0ac30bf0d4ebb77cf0abded1bb72d65f883", size = 201047, upload-time = "2026-11-20T01:22:34.388Z" },
 ]
 
 [package.optional-dependencies]
@@ -83,11 +84,11 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "codapact", extras = ["keyring"], specifier = ">=0.9.0,<0.10" }]
+requires-dist = [{ name = "codapact", extras = ["keyring"], specifier = ">=0.11.0,<0.12" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "codapact", extras = ["keyring"], specifier = "==0.9.0" },
+    { name = "codapact", extras = ["keyring"], specifier = "==0.11.0" },
     { name = "pytest", specifier = ">=8" },
 ]
 
@@ -349,4 +350,13 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz", hash = "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be", size = 19884, upload-time = "2025-11-23T19:02:53.191Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b7/46/f5af3402b579fd5e11573ce652019a67074317e18c1935cc0b4ba9b35552/secretstorage-3.5.0-py3-none-any.whl", hash = "sha256:0ce65888c0725fcb2c5bc0fdb8e5438eece02c523557ea40ce0703c266248137", size = 15554, upload-time = "2025-11-23T19:02:51.545Z" },
+]
+
+[[package]]
+name = "truststore"
+version = "0.10.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz", hash = "sha256:30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd", size = 28091, upload-time = "2026-10-12T22:27:31.808Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/e9/3a7820be2bb0fe53b6bc9c3be26d3d1158004e4c3ab953aa6840b955b1e9/truststore-0.10.5-py3-none-any.whl", hash = "sha256:9aaaedaefaf06d8b206278cf8b5012bc897f485a874503501e12d776df78951c", size = 19017, upload-time = "2026-10-12T22:27:30.377Z" },
 ]

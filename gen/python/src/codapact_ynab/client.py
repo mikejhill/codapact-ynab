@@ -7,6 +7,7 @@ import builtins  # noqa: F401
 from collections.abc import Iterator, Sequence
 from functools import cache
 from importlib.resources import files
+from os import PathLike  # noqa: F401
 from typing import Any, Literal, cast  # noqa: F401
 
 from codapact.runtime import (

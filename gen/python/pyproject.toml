@@ -2,7 +2,7 @@
 name = "codapact-ynab"
 version = "0.1.0"
 requires-python = ">=3.13"
-dependencies = ["codapact[keyring]>=0.9.0,<0.10"]
+dependencies = ["codapact[keyring]>=0.11.0,<0.12"]
 
 [project.scripts]
 codapact-ynab = "codapact_ynab.cli:main"
