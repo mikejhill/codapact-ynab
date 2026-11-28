@@ -16,6 +16,14 @@ cli:
       docs: >-
         Create a personal access token in YNAB under Account Settings > Developer Settings
         (https://app.ynab.com/settings/developer). It grants full access to your budgets.
+      check: get_user   # doctor's signed-in call (login: bearer row)
+  skill:   # agent skill shipped in the package: codapact-ynab skill install --dir DIR
+    api_name: YNAB
+    description: >-
+      Read and change YNAB plans, accounts, categories, months, payees, scheduled
+      transactions, and transactions through the `codapact-ynab` CLI. Use when the user
+      asks about their YNAB budget, balances, category funding, or spending, or wants to
+      add, edit, import, or schedule transactions.
 readme:
   name: YNAB API
   docs: https://api.ynab.com/

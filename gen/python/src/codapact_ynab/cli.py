@@ -17,7 +17,7 @@ from codapact.runtime.cli import (
 from .client import Client
 from .client import _model as _api_model
 
-RUNTIME = CliRuntime(program='codapact-ynab', env_prefix='YNAB', version='0.1.0', distribution='codapact-ynab', api_name='YNAB API Endpoints', api_version='1.91.0', model=_api_model, auth_plugin='', auth_config={'bearer': {'docs': 'Create a personal access token in YNAB under Account Settings > Developer Settings (https://app.ynab.com/settings/developer). It grants full access to your budgets.'}}, previous_programs=('ynab',))
+RUNTIME = CliRuntime(program='codapact-ynab', env_prefix='YNAB', version='0.1.0', distribution='codapact-ynab', api_name='YNAB API Endpoints', api_version='1.91.0', model=_api_model, auth_plugin='', auth_config={'bearer': {'docs': 'Create a personal access token in YNAB under Account Settings > Developer Settings (https://app.ynab.com/settings/developer). It grants full access to your budgets.', 'check': 'get_user'}}, previous_programs=('ynab',), skill='codapact_ynab')
 RAW = argparse.RawDescriptionHelpFormatter
 
 

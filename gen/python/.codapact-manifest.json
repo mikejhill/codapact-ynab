@@ -1,20 +1,21 @@
 {
-  "config_sha256": "da58fd67f6bdf642bd0a0895afc94148b9b99c153c9e6bcc6689a8d5c0d403d3",
+  "config_sha256": "f31e5c8ab5dfb19f73896e8d41cd9988f95321f18001ecefc4b721c0607efadf",
   "files": {
-    "README.md": "27af50cd7f1232cb8b49bbd82fcb750e938aff09fd054955440b3d0af9fd6aa8",
-    "pyproject.toml": "c69bc397b0dd0da6acf954e3cc929aae9563146691fed195fb6cdaf469a98fa2",
+    "README.md": "c15cbf9d6fc696b521054529e912ceb82f4e4066875890b4c8a9b39299c4a3d9",
+    "pyproject.toml": "414f2433e0c88000c3956c2fe0a8f27cfe6e398c5b827eb32baf9fcf54854e77",
     "src/codapact_ynab/__init__.py": "eceee2dc4cdfde74cdb25bcab3e065f34d17fd6649c27da01610e0dbd291208c",
     "src/codapact_ynab/__main__.py": "c66f72e21443a96f151e35aebc1c0711090aaf3eff12540bb4e3f67c2f06bc1c",
     "src/codapact_ynab/_model.json": "5aa0b841f137c3a4ec6112de93f47266750768ffe58676db4cdf0456c7476d48",
-    "src/codapact_ynab/cli.py": "881731b54753a7a1db370be8df96e9a11050690beb76073c6d120cda18a3dd07",
+    "src/codapact_ynab/cli.py": "966516a5ef7ed3fd35d8856ffd73f682d105b8de457b3462c37db1da12e99b82",
     "src/codapact_ynab/client.py": "fb269a1e489f957c825ac0941b1e866bbe00ab86cfb9cd02ad44694571dbe71c",
     "src/codapact_ynab/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/codapact_ynab/skill/SKILL.md": "0c71a021719c0ae4e81112b4bdda1adaa79a9a33ee3b1feda8cf14837dfe70a7",
     "src/codapact_ynab/types.py": "2b61751fed2e938c35e7b54e7cd59e8bb5b9660738ee34f7a3392cefd7a94802",
     "tests/e2e.json": "5bf56b06213871543fec8dba2f419d1e113bec9f997d2eda4c3fd5575cb23bb0",
     "tests/test_e2e.py": "019874e6b6f1baa8874322a19910e7537beb98e76fed8ee8f8a9354ee274151f"
   },
-  "generated_at": "2026-11-28T02:00:07Z",
-  "generator": "codapact/0.17.3",
+  "generated_at": "2026-11-28T03:54:51Z",
+  "generator": "codapact/0.18.0",
   "source": {
     "location": "openapi.yaml",
     "sha256": "eb761879d54eb47b592bd5f4d52b6d00c64b6578996e53e1ec115765183d9e92",
