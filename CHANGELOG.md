@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/mikejhill/codapact-ynab/compare/v0.4.0...v0.5.0) (2026-11-28)
+
+
+### Features
+
+* regenerate with Codapact 0.17.3 ([#12](https://github.com/mikejhill/codapact-ynab/issues/12)) ([f1472b5](https://github.com/mikejhill/codapact-ynab/commit/f1472b57ca75de246bb4a9aa313f823f2693871f))
+
 ## [0.4.0](https://github.com/mikejhill/codapact-ynab/compare/v0.3.0...v0.4.0) (2026-11-20)
 
 
