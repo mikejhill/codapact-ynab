@@ -52,16 +52,16 @@ wheels = [
 
 [[package]]
 name = "codapact"
-version = "0.11.0"
+version = "0.17.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "graphql-core" },
     { name = "pyyaml" },
     { name = "truststore" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a6/44/4ec52dcae1cdc4f42fb6fe6aca9f63a484d5fbbbba74e00322aa9670309d/codapact-0.11.0.tar.gz", hash = "sha256:0c4a51be3ea5ac18bd50781647dd3c32852d79f44dd915136ac9f0b65642504e", size = 543781, upload-time = "2026-11-20T01:22:35.999Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f6/41/bb575b1f5612664ac4e325f6ea95ee758a05f60c88f54a116938280be9be/codapact-0.17.3.tar.gz", hash = "sha256:aeb44c0b959188fd09692d7733180af01f20201b761c285374b56fc5fdeda52d", size = 642055, upload-time = "2026-11-25T22:19:19.782Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5c/94/06aaf0f064ee3c86d8a71e11e4a577ffbd5b3ed73bdded359fb13335601f/codapact-0.11.0-py3-none-any.whl", hash = "sha256:4939dd625578f536a82a74b6f732c0ac30bf0d4ebb77cf0abded1bb72d65f883", size = 201047, upload-time = "2026-11-20T01:22:34.388Z" },
+    { url = "https://files.pythonhosted.org/packages/4e/7c/8a0bb9da5f056db422a7b91602042c2b97f260ff4c88f28a61c945494998/codapact-0.17.3-py3-none-any.whl", hash = "sha256:dd239fef54bd4506e82ea934de78a3bc96493337e69022ea06fe7e565812197e", size = 243728, upload-time = "2026-11-25T22:19:18.502Z" },
 ]
 
 [package.optional-dependencies]
@@ -84,11 +84,11 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "codapact", extras = ["keyring"], specifier = ">=0.11.0,<0.12" }]
+requires-dist = [{ name = "codapact", extras = ["keyring"], specifier = ">=0.17.3,<0.18" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "codapact", extras = ["keyring"], specifier = "==0.11.0" },
+    { name = "codapact", extras = ["keyring"], specifier = "==0.17.3" },
     { name = "pytest", specifier = ">=8" },
 ]
 

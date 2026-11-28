@@ -3,12 +3,11 @@
 # ruff: noqa: E501
 from __future__ import annotations
 
-import builtins  # noqa: F401
-from collections.abc import Iterator, Sequence
+import builtins
+from collections.abc import Mapping, Sequence
 from functools import cache
 from importlib.resources import files
-from os import PathLike  # noqa: F401
-from typing import Any, Literal, cast  # noqa: F401
+from typing import Any, cast
 
 from codapact.runtime import (
     AuthProvider,
@@ -18,10 +17,12 @@ from codapact.runtime import (
     load_model,
 )
 from codapact.runtime.arguments import UNSET, Unset, call_args
-
-from codapact.runtime.arguments import fields as _fields  # noqa: F401
+from codapact.runtime.arguments import fields as _fields
 
 from . import types as _t
+
+PROTOCOLS: dict[str, Any] = {}
+"""Custom protocol handlers (``module:attribute``) this client registers by default."""
 
 
 @cache
@@ -451,6 +452,8 @@ class Client:
         allow_private: bool = False,
         response_validation: str = "strict",
         proxy: str | None = None,
+        protocols: Mapping[str, Any] | None = None,
+        hooks: Sequence[Any] = (),
     ) -> None:
         self._runtime = RuntimeClient(
             _model(),
@@ -463,6 +466,8 @@ class Client:
             allow_private=allow_private,
             response_validation=response_validation,
             proxy=proxy,
+            protocols={**PROTOCOLS, **(protocols or {})},
+            hooks=hooks,
         )
         self.accounts = _AccountsResource(self._runtime)
         self.categories = _CategoriesResource(self._runtime)
