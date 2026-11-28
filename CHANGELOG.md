@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/mikejhill/codapact-ynab/compare/v0.5.0...v0.6.0) (2026-11-28)
+
+
+### Features
+
+* doctor verifies the login; ship the agent skill (codapact 0.18.0) ([#15](https://github.com/mikejhill/codapact-ynab/issues/15)) ([4977611](https://github.com/mikejhill/codapact-ynab/commit/4977611584aad399338a64bdf23ce420c7c7a34a))
+
 ## [0.5.0](https://github.com/mikejhill/codapact-ynab/compare/v0.4.0...v0.5.0) (2026-11-28)
 
 
