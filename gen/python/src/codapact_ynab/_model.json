@@ -6,7 +6,7 @@
     }
   ],
   "docs": "Our API uses a REST based design, leverages the JSON data format, and relies upon HTTPS for transport. We respond with meaningful HTTP response codes and if an error occurs, we include error details in the response body.\n\nRead the [API Documentation](https://api.ynab.com) for more information about the API, including how to obtain an access token and how to use it to make requests.",
-  "model_version": 2,
+  "model_version": 4,
   "name": "YNAB API Endpoints",
   "operations": [
     {
